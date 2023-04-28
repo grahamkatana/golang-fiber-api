@@ -49,7 +49,7 @@ func GetUsers(c *fiber.Ctx) error {
 func findUser(id int, user *models.User) error {
 	database.Database.Db.Find(&user, "id = ?", id)
 	if user.ID == 0 {
-		return errors.New("No such record exists")
+		return errors.New("no such record exists")
 	}
 	return nil
 
